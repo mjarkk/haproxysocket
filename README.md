@@ -1,4 +1,4 @@
-# `haproxysocket` a go wrapper around the haproxy unix sock
+# `haproxysocket` a go wrapper for the haproxy unix sock
 This covers about 80% of the commandos, althouh and my goal is to support 100%  
 
 ## How to use
