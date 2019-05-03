@@ -18,6 +18,7 @@ import (
 func main() {
 	// Create a instace of haproxy
 	// Make sure to change /var/run/haproxy.sock to where your haproxy sock file is
+	// For the tpc sock use: ("tcp", "localhost:9999")
 	h := haproxysocket.New("unix", "/var/run/haproxy.sock")
 
 	// Get the sessions
