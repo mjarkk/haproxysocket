@@ -1,8 +1,9 @@
-# `haproxysocket` - a go wrapper around the haproxy unix socket
-This covers about 80 of the commandos, and my goal is to support 100%  
+# `haproxysocket` a go wrapper the around haproxy unix sock
+This covers about 80% of the commandos, althouh and my goal is to support 100%  
 
 ## How to use
-In your haproxy config under **global** add `stats timeout 2m` and add `stats socket ipv4@127.0.0.1:9999 level admin` or `stats socket /var/run/haproxy.sock mode 666 level admin`  
+See [./example](./example) for a working example,  
+In your haproxy config under **global** add`stats timeout 2m` and add`stats socket ipv4@127.0.0.1:9999 level admin` or`stats socket /var/run/haproxy.sock mode 666 level admin`  
 
 In your go code:
 ```go
@@ -16,8 +17,8 @@ import (
 
 func main() {
 	// Create a instace of haproxy
-	// Make sure to change /var/sock/haproxy.sock to where your haproxy sock file is
-	h := haproxysocket.New("unix", "/var/sock/haproxy.sock")
+	// Make sure to change /var/run/haproxy.sock to where your haproxy sock file is
+	h := haproxysocket.New("unix", "/var/run/haproxy.sock")
 
 	// Get the sessions
 	sessions, err := h.ShowSess()
@@ -39,13 +40,13 @@ func main() {
 ```
 
 ## Avaliable functions
-Most functions have the same naming sceme as the socket commands, for example `show errors` will become `ShowErrors`   
+Most functions have the same naming sceme as the socket commands, for example`show errors` will become`ShowErrors`   
 For docs about the functions see: [mangement.txt > 9.3. Unix Socket commands](http://www.haproxy.org/download/2.0/doc/management.txt)  
 - `ShowErrors` 
 - `ClearCounters`
-- `ShowInfo `
-- `ShowStat `
-- `ShowSchemaJSON `
+- `ShowInfo`
+- `ShowStat`
+- `ShowSchemaJSON`
 - `DisableAgent`
 - `DisableHealth`
 - `DisableServer`
@@ -63,9 +64,9 @@ For docs about the functions see: [mangement.txt > 9.3. Unix Socket commands](ht
 - `(ServerT)State`
 - `(ServerT)Weight`
 - `(ServerT)FQDN`
-- `GetWeight `
+- `GetWeight`
 - `SetWeight`
-- `ShowSess `
+- `ShowSess`
 - `ShutdownSession`
 - `ShutdownSessionsServer`
 - `ClearTable` :x: Not inplemented yet
@@ -74,16 +75,16 @@ For docs about the functions see: [mangement.txt > 9.3. Unix Socket commands](ht
 - `DisableFrontend`
 - `EnableFrontend`
 - `SetMaxconnFrontend`
-- `ShowServersState `
-- `ShowBackend `
+- `ShowServersState`
+- `ShowBackend`
 - `ShutdownFrontend`
 - `SetDynamicCookieKeyBackend`
 - `DynamicCookieBackend`
-- `ShowStatResolvers `
+- `ShowStatResolvers`
 - `SetMaxconnGlobal`
 - `SetRateLimit`
-- `ShowEnv `
-- `ShowCliSockets `
+- `ShowEnv`
+- `ShowCliSockets`
 - `AddACL` :x: Not inplemented yet
 - `ClearACL` :x: Not inplemented yet
 - `DelACL` :x: Not inplemented yet
@@ -95,4 +96,4 @@ For docs about the functions see: [mangement.txt > 9.3. Unix Socket commands](ht
 - `GetMap` :x: Not inplemented yet
 - `SetMap` :x: Not inplemented yet
 - `ShowMap`
-- `ShowPools `
+- `ShowPools`
