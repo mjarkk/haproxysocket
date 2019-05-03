@@ -1,5 +1,5 @@
 # `haproxysocket` a go wrapper for the haproxy unix sock
-This covers about 80% of the commandos, althouh and my goal is to support 100%  
+This covers about 80% of the commandos, although and my goal is to support 100%  
 
 ## How to use
 See [./example](./example) for a working example,  
@@ -41,7 +41,7 @@ func main() {
 ```
 
 ## Avaliable functions
-Most functions have the same naming sceme as the socket commands, for example`show errors` will become`ShowErrors`   
+Most functions have the same naming sceme as the socket commands, for example`show errors` will be `ShowErrors`   
 For docs about the functions see: [mangement.txt > 9.3. Unix Socket commands](http://www.haproxy.org/download/2.0/doc/management.txt)  
 - `ShowErrors` 
 - `ClearCounters`
