@@ -1,5 +1,5 @@
 # `haproxysocket` a go wrapper for the haproxy unix sock
-This covers about 80% of the commandos, although and my goal is to support 100%  
+This covers about 80% of the commandos, although the goal is to get 100%  
 
 ## How to use
 See [./example](./example) for a working example,  
