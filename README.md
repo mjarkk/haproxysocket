@@ -42,7 +42,7 @@ func main() {
 
 ## Avaliable functions
 Most functions have the same naming sceme as the socket commands, for example`show errors` will be `ShowErrors`   
-For docs about the functions see: [mangement.txt > 9.3. Unix Socket commands](http://www.haproxy.org/download/2.0/doc/management.txt)  
+For documentatoin about the functions see: [mangement.txt > 9.3. Unix Socket commands](http://www.haproxy.org/download/2.0/doc/management.txt)  
 - `ShowErrors` 
 - `ClearCounters`
 - `ShowInfo`
